@@ -68,6 +68,7 @@ const Projects = () => {
       viewport={{ once: true }}
     >
       <h2 className="section-title">Projects</h2>
+
       <div className="bd-grid">
         <motion.div
           className="projects__container"

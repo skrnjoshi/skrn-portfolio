@@ -78,29 +78,49 @@ img {
 
 /*===== CLASS CSS ===== */
 .section-title {
-  position: relative;
   font-size: var(--h2-font-size);
   color: var(--first-color);
   margin-top: var(--mb-2);
-  margin-bottom: var(--mb-4);
   text-align: center;
-}
-
-.section-title::after {
-  position: absolute;
-  content: "";
-  width: 64px;
-  height: 0.18rem;
-  left: 0;
-  right: 0;
-  margin: auto;
-  top: 2rem;
-  background-color: var(--first-color);
+  text-decoration: underline;
 }
 
 .section {
   padding-top: 3rem;
   padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .section-title::after {
+    height: 0.15rem;
+  }
+}
+
+/* Media query for tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .section-title {
+    padding-bottom: 0.6rem;
+  }
+}
+
+/* Media query for desktops and larger screens */
+@media screen and (min-width: 769px) {
+  .section-title {
+    padding-bottom: 0.75rem;
+  }
+
+  .section-title::after {
+    height: 0.2rem;
+  }
 }
 
 /*===== LAYOUT =====*/
@@ -250,7 +270,7 @@ img {
 }
 
 .home__blob-img {
-  width: 100%;
+  width: 90%;
   height: auto;
 }
 
@@ -778,8 +798,8 @@ img {
   }
 
   .section-title::after {
-    width: 80px;
-    top: 3rem;
+    width: 80px; /* Wider underline for larger screens */
+    bottom: -1rem; /* Adjust distance for larger screens */
   }
 
   .nav {
