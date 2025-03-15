@@ -183,46 +183,104 @@ img {
 }
 
 /*===== HOME =====*/
+/*===== HOME =====*/
 .home {
   position: relative;
-  row-gap: 5rem;
-  padding: 4rem 0 5rem;
+  row-gap: 3rem; /* Reduced gap for better mobile fit */
+  padding: 2rem 0; /* Reduced padding for mobile */
+  display: flex;
+  flex-direction: row; /* Default: text on left, image on right */
+  align-items: center;
+  justify-content: space-between; /* Space between description and image */
+  text-align: left; /* Align text to the left */
 }
+
 .home__data {
-  align-self: center;
+  max-width: 50%; /* Ensure content doesn't overflow */
 }
+
 .home__title {
   font-size: var(--big-font-size);
-  margin-bottom: var(--mb-5);
+  margin-bottom: var(--mb-3); /* Adjusted margin */
+  line-height: 1.2; /* Better line height for readability */
 }
+
 .home__title-color {
   color: var(--first-color);
 }
+
 .home__social {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Keep icons in a row */
+  gap: 1rem; /* Added gap between icons */
+  justify-content: flex-start; /* Align icons to the left */
+  margin-top: var(--mb-3); /* Adjusted margin */
 }
+
 .home__social-icon {
-  width: max-content;
-  margin-bottom: var(--mb-2);
   font-size: 1.5rem;
   color: var(--second-color);
+  transition: color 0.3s;
 }
+
 .home__social-icon:hover {
   color: var(--first-color);
 }
+
 .home__img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 260px;
-  transform: translateX(75.6px); /* Move the image 2cm to the right */
+  width: 260px; /* Adjusted image size */
+  margin-left: var(--mb-4); /* Added margin to separate image from text */
 }
+
 .home__blob {
   fill: var(--first-color);
 }
+
 .home__blob-img {
-  width: 360px;
+  width: 100%; /* Ensure image scales properly */
+  height: auto;
+}
+
+/* Media Queries for Mobile */
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column-reverse; /* Image on top, text on bottom */
+    text-align: center; /* Center text on mobile */
+    padding: 1rem 0; /* Further reduced padding for smaller screens */
+  }
+
+  .home__data {
+    max-width: 100%; /* Full width for mobile */
+  }
+
+  .home__title {
+    font-size: 1.5rem; /* Adjusted font size for mobile */
+  }
+
+  .home__social {
+    justify-content: center; /* Center icons on mobile */
+    gap: 0.5rem; /* Reduced gap for smaller screens */
+  }
+
+  .home__img {
+    width: 200px; /* Adjusted image size for mobile */
+    margin-left: 0; /* Remove margin on mobile */
+    margin-bottom: var(--mb-3); /* Added margin to separate image from text */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home__title {
+    font-size: 1.25rem; /* Adjusted font size for very small screens */
+  }
+
+  .home__social-icon {
+    font-size: 1.25rem; /* Adjusted icon size for very small screens */
+  }
+
+  .home__img {
+    width: 150px; /* Further reduced image size for very small screens */
+  }
 }
 
 /*BUTTONS*/
@@ -347,12 +405,12 @@ img {
   overflow-x: auto;
   gap: 1.5rem;
   padding-bottom: 1rem; /* Add some padding at the bottom for scrollbar */
-  padding-left: 80px;
-  padding-: 80px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: var(--first-color) #f1f1f1; /* For Firefox */
-  margin-left: var(--mb-2); /* Add left margin for better alignment */
-  margin-right: var(--mb-2); /* Add right margin for better alignment */
+  scroll-snap-type: x mandatory; /* Enable smooth scrolling on touch devices */
+  -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
 }
 
 /* Custom scrollbar for Webkit browsers (Chrome, Safari) */
@@ -383,6 +441,7 @@ img {
   overflow: hidden;
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
   transition: transform 0.3s, box-shadow 0.3s;
+  scroll-snap-align: start; /* Smooth scrolling snap point */
 }
 
 .projects__item:hover {
@@ -427,7 +486,8 @@ img {
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.4)
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.1)
   ); /* Gradient overlay for better text visibility */
   color: #fff; /* White text for contrast */
 }
@@ -441,6 +501,11 @@ img {
 .projects__description {
   font-size: var(--normal-font-size);
   margin-bottom: var(--mb-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .projects__link {
@@ -453,7 +518,7 @@ img {
 }
 
 .projects__link:hover {
-  color: var(--second-color);
+  color: #fff;
 }
 
 .projects__link i {
@@ -464,6 +529,60 @@ img {
 
 .projects__link:hover i {
   transform: translateX(5px);
+}
+
+/* Mobile responsiveness for projects section */
+@media screen and (max-width: 768px) {
+  .projects__container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1rem;
+  }
+
+  .projects__item {
+    width: 250px;
+    height: 350px;
+  }
+
+  .projects__title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .projects__description {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    -webkit-line-clamp: 3;
+  }
+
+  .projects__content {
+    padding: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projects__container {
+    gap: 0.75rem;
+  }
+
+  .projects__item {
+    width: 220px;
+    height: 320px;
+  }
+
+  .projects__content {
+    padding: 1rem;
+  }
+
+  .projects__description {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .projects__link {
+    font-size: 0.8rem;
+  }
 }
 
 /* ===== CONTACT =====*/

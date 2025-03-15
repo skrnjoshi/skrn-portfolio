@@ -1,6 +1,7 @@
 // components/Header.js
 import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
+import logo from "../assets/img/skrnlogo.png"; // Adjust path accordingly
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -18,7 +19,12 @@ const Header = () => {
       <nav className="nav bd-grid">
         <div>
           <Link to="#" className="nav__logo">
-            Saikiran
+            <img
+              src={logo}
+              alt="Saikiran"
+              className="nav__img"
+              style={{ width: "50px", height: "auto" }}
+            />
           </Link>
         </div>
         <div className={`nav__menu ${showMenu ? "show" : ""}`} id="nav-menu">

@@ -15,17 +15,17 @@ const Home = () => {
         <a href="tel:+916301469008" className="button">
           Contact
         </a>
-      </div>
 
-      <div className="home__social">
-        <SocialLink
-          href="https://www.linkedin.com/in/skrn-donkana/"
-          iconClass="bx bxl-linkedin"
-        />
-        <SocialLink
-          href="https://github.com/skrnjoshi"
-          iconClass="bx bxl-github"
-        />
+        <div className="home__social">
+          <SocialLink
+            href="https://www.linkedin.com/in/skrn-donkana/"
+            iconClass="bx bxl-linkedin"
+          />
+          <SocialLink
+            href="https://github.com/skrnjoshi"
+            iconClass="bx bxl-github"
+          />
+        </div>
       </div>
 
       <div className="home__img">
