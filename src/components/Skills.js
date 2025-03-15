@@ -48,11 +48,20 @@ const Skills = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
+      style={{ overflow: "hidden" }}
     >
       <h2 className="section-title">Skills</h2>
       <div className="skills__container">
         <motion.div
           className="grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: "15px",
+            width: "100%",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+          }}
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
