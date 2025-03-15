@@ -150,6 +150,92 @@ img {
   font-weight: var(--font-semi);
 }
 
+/* Ensure nav items are aligned properly */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* Dark Mode Toggle - Always Visible */
+.darkmode-container {
+  display: flex;
+  align-items: center;
+  margin-right: 15px; /* Push it closer to Home */
+}
+
+/* Make sure the toggle sits properly */
+.theme-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Menu Toggle Button (Burger Icon) */
+.nav__toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav {
+    position: relative;
+  }
+
+  /* Show Menu Toggle on small screens */
+  .nav__toggle {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  /* Hide normal nav menu and show mobile layout */
+  .nav__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .nav__menu.show {
+    display: flex;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Move Dark Mode Toggle next to the menu button */
+  .darkmode-container {
+    position: absolute;
+    right: 50px;
+    top: 10px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
@@ -170,7 +256,10 @@ img {
 .nav__item {
   margin-bottom: var(--mb-4);
 }
-
+.nav-container-logo {
+  display: flex;
+  flex-direction: row;
+}
 .nav__link {
   position: relative;
   color: #fff;
@@ -609,6 +698,10 @@ img {
   color: #fff;
 }
 
+.icon_toggle {
+  padding-bottom: 20px;
+}
+
 .projects__link i {
   margin-left: 0.5rem;
   font-size: 1.2rem;
@@ -911,4 +1004,144 @@ img {
   .grid {
     grid-template-columns: 1fr !important;
   }
+}
+
+/* === GLOBAL DARK MODE STYLES === */
+.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dark-mode body {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* === HEADER (NAVBAR) === */
+.dark-mode .nav {
+  background: #1e1e1e;
+}
+
+.dark-mode .l-header {
+  background: #1e1e1e;
+}
+
+.dark-mode .nav__logo,
+.dark-mode .nav__menu a {
+  color: #e0e0e0;
+}
+
+.dark-mode .nav__toggle {
+  color: #e0e0e0;
+}
+
+/* === HOME SECTION === */
+.dark-mode .home {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .home__title {
+  color: #e0e0e0;
+}
+
+.dark-mode .home__title-color {
+  color: #8ab4f8;
+}
+
+.dark-mode .home__social-icon {
+  color: #8ab4f8;
+  transition: color 0.3s ease-in-out;
+}
+
+.dark-mode .home__social-icon:hover {
+  color: #5e98d9;
+}
+
+/* Fix SVG Profile Blob Background */
+
+.dark-mode .home__blob-img {
+  filter: brightness(85%);
+}
+
+/* === SKILLS SECTION === */
+.dark-mode .skill-card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .skill-card:hover {
+  box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .skill-card__icon {
+  color: #8ab4f8;
+}
+
+.dark-mode .skill-card__progress {
+  background: #333;
+}
+
+.dark-mode .skill-card__progress-bar {
+  background: linear-gradient(90deg, #8ab4f8, #5e98d9);
+}
+
+/* === CONTACT SECTION === */
+.dark-mode .contact {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .contact__input {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+.dark-mode .contact__input::placeholder {
+  color: #aaa;
+}
+
+.dark-mode .contact__button {
+  background: #8ab4f8;
+  color: #121212;
+  transition: background 0.3s ease-in-out;
+}
+
+.dark-mode .contact__button:hover {
+  background: #5e98d9;
+}
+
+/* === FOOTER === */
+.dark-mode .footer {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode .footer__text {
+  color: #aaa;
+}
+
+/* === TOGGLE BUTTON === */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #6200ea;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle:hover {
+  background: #3700b3;
+  transform: scale(1.05);
 }

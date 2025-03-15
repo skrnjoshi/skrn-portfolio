@@ -1,7 +1,7 @@
-// components/Header.js
 import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import logo from "../assets/img/skrnlogo.png"; // Adjust path accordingly
+import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -64,9 +64,11 @@ const Header = () => {
               </Link>
             </li>
           </ul>
+          <DarkModeToggle />
         </div>
         <div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
-          <i className="bx bx-menu"></i>
+          <DarkModeToggle />
+          <i className="bx bx-menu" id="icon_toggle"></i>
         </div>
       </nav>
     </header>
