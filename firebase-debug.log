@@ -1,0 +1,101 @@
+[debug] [2025-03-15T08:55:23.024Z] ----------------------------------------------------------------------
+[debug] [2025-03-15T08:55:23.026Z] Command:       /opt/homebrew/Cellar/node/23.7.0/bin/node /opt/homebrew/bin/firebase deploy --debug
+[debug] [2025-03-15T08:55:23.026Z] CLI Version:   13.34.0
+[debug] [2025-03-15T08:55:23.026Z] Platform:      darwin
+[debug] [2025-03-15T08:55:23.026Z] Node Version:  v23.7.0
+[debug] [2025-03-15T08:55:23.026Z] Time:          Sat Mar 15 2025 14:25:23 GMT+0530 (India Standard Time)
+[debug] [2025-03-15T08:55:23.026Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-15T08:55:23.104Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-15T08:55:23.105Z] > authorizing via signed-in user (skrnjoshi02@gmail.com)
+[debug] [2025-03-15T08:55:23.105Z] [iam] checking project saikiran-donkana for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-03-15T08:55:23.106Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:23.106Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:23.106Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/saikiran-donkana:testIamPermissions [none]
+[debug] [2025-03-15T08:55:23.106Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/saikiran-donkana:testIamPermissions x-goog-quota-user=projects/saikiran-donkana
+[debug] [2025-03-15T08:55:23.106Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/saikiran-donkana:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-03-15T08:55:24.442Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/saikiran-donkana:testIamPermissions 200
+[debug] [2025-03-15T08:55:24.443Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/saikiran-donkana:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-03-15T08:55:24.443Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:24.443Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:24.444Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/saikiran-donkana [none]
+[debug] [2025-03-15T08:55:25.047Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/saikiran-donkana 200
+[debug] [2025-03-15T08:55:25.047Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/saikiran-donkana {"projectId":"saikiran-donkana","projectNumber":"780293352391","displayName":"saikiran-donkana","name":"projects/saikiran-donkana","resources":{"hostingSite":"saikiran-donkana"},"state":"ACTIVE","etag":"1_681747da-6824-4300-8eef-f93827266361"}
+[info] 
+[info] === Deploying to 'saikiran-donkana'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-03-15T08:55:25.052Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:25.052Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:25.052Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/versions [none]
+[debug] [2025-03-15T08:55:25.052Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-03-15T08:55:26.161Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/versions 200
+[debug] [2025-03-15T08:55:26.161Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/versions {"name":"projects/780293352391/sites/saikiran-donkana/versions/feb4d716a64fca45","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[saikiran-donkana]: beginning deploy... 
+[info] i  hosting[saikiran-donkana]: found 21 files in build 
+[debug] [2025-03-15T08:55:26.171Z] [hosting] uploading with 200 concurrency
+[debug] [2025-03-15T08:55:26.171Z] [hosting] hash cache [YnVpbGQ] not populated
+[debug] [2025-03-15T08:55:26.713Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:26.713Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:26.713Z] [hosting] hash cache [YnVpbGQ] stored for 21 files
+[debug] [2025-03-15T08:55:26.713Z] [hosting][hash queue][FINAL] {"max":539,"min":11,"avg":48.095238095238095,"active":0,"complete":21,"success":21,"errored":0,"retried":0,"total":21,"elapsed":542}
+[debug] [2025-03-15T08:55:26.713Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/780293352391/sites/saikiran-donkana/versions/feb4d716a64fca45:populateFiles [none]
+[debug] [2025-03-15T08:55:26.713Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/780293352391/sites/saikiran-donkana/versions/feb4d716a64fca45:populateFiles {"files":{"/index.html":"b1f83f1d16fadfb005b5bb463023f48973b527bb7aaf9fba1f1eac9fea4edab8","/asset-manifest.json":"881be49fecdca2912832d7d8281a3657fab7162ddcd3f262ba0535cebeade2ee","/static/js/main.9e807463.js.LICENSE.txt":"af48f71c47a1d7a5381d72a83e12646dfc014b0d962dfbee8c33e86e3be543b6","/static/media/work6.71c746fa8c4fac84069c.jpg":"8e7738a89a4e65a2d2e641f513e878c08c47652a19355a0ecc4a7d30482105d3","/static/media/work5.ec6bc32106648527919e.jpg":"629fa30532853b6e163474c8302541a1d4511f4c8de4f79561051d8eb7076486","/static/media/work3.0ae9596bb00d9773ce17.jpg":"5d94196fa3acd7a1ae37927d31d43146773d21d06d57fad1f6daf27d494b7cea","/static/media/work1.56b07f922b35521bc967.jpg":"93d6c61ca8c2a740203f2219c2d1f0bccfd5cc837a5ffd5aa8887f5787d48333","/static/media/work4.9ec37c245302266e99f9.jpg":"9152b800445622715bb520d5afa18b4ce725c79bcf3e22f3755b4d8fd738ab7d","/static/media/work2.8ce2dcfde849319b6f92.jpg":"0c5d47a821125841e81cfc07712c5f4a1472b2570b9ef13963616ee56736c3e4","/static/css/main.631e175a.css":"50436a623343d810c0cac0f04a5cf650bbb0070e7bdd17ccc2d4f320b5f73d07","/static/css/main.631e175a.css.map":"aa4f137ee6e85fdc63b39eb10293500c4b4a448782a6dcd6187394c663bcf4f8","/static/media/about.7092dbbbdcef094d4417.jpg":"d7a4a382cddc2b8d2edce2bbe9f6a5238e9e78a1a280802ec98401bb15db2720","/static/media/boxicons.df635aaf04cd75132f62.woff2":"f9068bf11049ae7543dac80d693876f1a6512649f260249a8b6fa7cffc2d0417","/static/js/main.9e807463.js":"c2bcc6e17fde73a4bd520d04b1f0299f8971c22e9ce49ed2191d764f5450d467","/static/media/boxicons.d12afc36557395143e4b.woff":"f2469620c16e2146625de3772e326b85b0a41169a8d6d5363029bb1836b291d0","/static/media/boxicons.db9ddb1898dbd76badca.ttf":"25041ee822d58b7000909ada042da3664342411e4167fa69ec7172c8760ef8e3","/static/media/perfil.eeceeed58625712c1c19.png":"9f1ef84fb4b50e058dc28a3a0cc79294f2af681ddfe55e49f2b59d5babfe2df6","/static/media/boxicons.65a8ce52fc5427e8f94d.eot":"a0a9bd84367996064e8e00dd64f320b8dc219200d7994abf34766f2f1424c735","/static/media/projects.75465c68f332c9fac21d.jpg":"29c3d223b0c622282942e2549452c98e916df801e33e4341d4d9f547c7acb1b0","/static/media/boxicons.9e2b21b135bc7d4c803f.svg":"9867fcea31ddca80ccb85fa62680c895aaa826113dd071f10ccef794e61e2633","/static/js/main.9e807463.js.map":"760f51b4d453f52ca53dc6dc2fc08e1a33c920b4c268634bfd51e6e9581d2abd"}}
+[debug] [2025-03-15T08:55:27.198Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/780293352391/sites/saikiran-donkana/versions/feb4d716a64fca45:populateFiles 200
+[debug] [2025-03-15T08:55:27.199Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/780293352391/sites/saikiran-donkana/versions/feb4d716a64fca45:populateFiles {"uploadRequiredHashes":["b1f83f1d16fadfb005b5bb463023f48973b527bb7aaf9fba1f1eac9fea4edab8"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/saikiran-donkana/versions/feb4d716a64fca45/files"}
+[debug] [2025-03-15T08:55:27.200Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:27.200Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:27.200Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/saikiran-donkana/versions/feb4d716a64fca45/files/b1f83f1d16fadfb005b5bb463023f48973b527bb7aaf9fba1f1eac9fea4edab8 [none]
+[debug] [2025-03-15T08:55:27.200Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/saikiran-donkana/versions/feb4d716a64fca45/files/b1f83f1d16fadfb005b5bb463023f48973b527bb7aaf9fba1f1eac9fea4edab8 [stream]
+[debug] [2025-03-15T08:55:27.202Z] [hosting][populate queue][FINAL] {"max":487,"min":487,"avg":487,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":490}
+[debug] [2025-03-15T08:55:27.203Z] [hosting] uploads queued: 1
+[info] i  hosting: uploading new files [0/1] (0%) 
+[debug] [2025-03-15T08:55:28.594Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/saikiran-donkana/versions/feb4d716a64fca45/files/b1f83f1d16fadfb005b5bb463023f48973b527bb7aaf9fba1f1eac9fea4edab8 200
+[debug] [2025-03-15T08:55:28.594Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/saikiran-donkana/versions/feb4d716a64fca45/files/b1f83f1d16fadfb005b5bb463023f48973b527bb7aaf9fba1f1eac9fea4edab8 [stream]
+[debug] [2025-03-15T08:55:28.594Z] [hosting][upload queue][FINAL] {"max":1395,"min":1395,"avg":1395,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1395}
+[info] i  hosting: upload complete 
+[info] ✔  hosting[saikiran-donkana]: file upload complete 
+[debug] [2025-03-15T08:55:28.595Z] [hosting] deploy completed after 2432ms
+[debug] [2025-03-15T08:55:28.595Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "saikiran-donkana"
+    },
+    "version": "projects/780293352391/sites/saikiran-donkana/versions/feb4d716a64fca45"
+  }
+]
+[info] i  hosting[saikiran-donkana]: finalizing version... 
+[debug] [2025-03-15T08:55:28.596Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:28.596Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:28.597Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/versions/feb4d716a64fca45 updateMask=status%2Cconfig
+[debug] [2025-03-15T08:55:28.597Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/versions/feb4d716a64fca45 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2025-03-15T08:55:29.143Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/versions/feb4d716a64fca45 200
+[debug] [2025-03-15T08:55:29.144Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/versions/feb4d716a64fca45 {"name":"projects/780293352391/sites/saikiran-donkana/versions/feb4d716a64fca45","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-03-15T08:55:25.758716Z","createUser":{"email":"skrnjoshi02@gmail.com"},"finalizeTime":"2025-03-15T08:55:28.911178Z","finalizeUser":{"email":"skrnjoshi02@gmail.com"}}
+[debug] [2025-03-15T08:55:29.144Z] [hosting] finalized version for saikiran-donkana:[object Object]
+[info] ✔  hosting[saikiran-donkana]: version finalized 
+[info] i  hosting[saikiran-donkana]: releasing new version... 
+[debug] [2025-03-15T08:55:29.145Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:29.145Z] Checked if tokens are valid: true, expires at: 1742031042228
+[debug] [2025-03-15T08:55:29.145Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/channels/live/releases versionName=projects%2F780293352391%2Fsites%2Fsaikiran-donkana%2Fversions%2Ffeb4d716a64fca45
+[debug] [2025-03-15T08:55:29.145Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/channels/live/releases {}
+[debug] [2025-03-15T08:55:29.609Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/channels/live/releases 200
+[debug] [2025-03-15T08:55:29.610Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/saikiran-donkana/channels/live/releases {"name":"projects/780293352391/sites/saikiran-donkana/channels/live/releases/1742028928891000","version":{"name":"projects/780293352391/sites/saikiran-donkana/versions/feb4d716a64fca45","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-03-15T08:55:25.758716Z","createUser":{"email":"skrnjoshi02@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKlnR7tYER9vifTP9QsN-8IYSEVpwDk6MiaEgzsXsdELA7h1QY"},"finalizeTime":"2025-03-15T08:55:28.911178Z","finalizeUser":{"email":"skrnjoshi02@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKlnR7tYER9vifTP9QsN-8IYSEVpwDk6MiaEgzsXsdELA7h1QY"}},"type":"DEPLOY","releaseTime":"2025-03-15T08:55:28.891Z","releaseUser":{"email":"skrnjoshi02@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKlnR7tYER9vifTP9QsN-8IYSEVpwDk6MiaEgzsXsdELA7h1QY"}}
+[debug] [2025-03-15T08:55:29.610Z] [hosting] release: {"name":"projects/780293352391/sites/saikiran-donkana/channels/live/releases/1742028928891000","version":{"name":"projects/780293352391/sites/saikiran-donkana/versions/feb4d716a64fca45","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-03-15T08:55:25.758716Z","createUser":{"email":"skrnjoshi02@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKlnR7tYER9vifTP9QsN-8IYSEVpwDk6MiaEgzsXsdELA7h1QY"},"finalizeTime":"2025-03-15T08:55:28.911178Z","finalizeUser":{"email":"skrnjoshi02@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKlnR7tYER9vifTP9QsN-8IYSEVpwDk6MiaEgzsXsdELA7h1QY"}},"type":"DEPLOY","releaseTime":"2025-03-15T08:55:28.891Z","releaseUser":{"email":"skrnjoshi02@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKlnR7tYER9vifTP9QsN-8IYSEVpwDk6MiaEgzsXsdELA7h1QY"}}
+[info] ✔  hosting[saikiran-donkana]: release complete 
+[info] 
+[info] ✔  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/saikiran-donkana/overview
+[info] Hosting URL: https://saikiran-donkana.web.app
