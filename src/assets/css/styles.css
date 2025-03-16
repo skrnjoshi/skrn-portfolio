@@ -634,34 +634,34 @@ img {
 .section-content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  max-width: 95%;
-  margin-top: var(--mb-4);
+  justify-content: center;
+  align-items: flex-end;
   gap: 20px;
+  margin-bottom: 10rem;
 }
 
-.work-header {
-  max-width: 95%;
-}
 .section-content-item1 {
-  margin: 10px;
-  white-space: pre-line; /* Preserves line breaks */
+  flex: 2; /* Initially takes more space */
+  order: 2;
+
+  transition: width 0.3s ease-in-out; /* Smooth transition */
 }
 
 .section-content-item2 {
-  min-width: 40%;
-  margin: 10px;
+  flex: 1.2; /* Remains the same width */
+  order: 1;
+  min-width: 300px;
 }
 
+/* Ensure the work logo and text are aligned properly */
 .work-header {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding-bottom: 10px;
 }
 
 .work-logo {
-  width: 25%;
+  width: 50px; /* Adjust size as needed */
   height: auto;
 }
 
@@ -672,7 +672,7 @@ img {
 }
 
 /*===== FORCE LINE BREAK FOR SMALLER SCREENS =====*/
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 768px) {
   .section-content {
     flex-direction: column;
     align-items: center;

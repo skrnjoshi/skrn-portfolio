@@ -5,15 +5,13 @@ import image from "../assets/img/cognizant_logo.png";
 import "../assets/css/styles.css"; // Importing external CSS
 
 const textArray1 = [
-  "Cognizant, Hyderabad (Nov 2021 – Present)",
-  "Frontend Developer (React, Redux) on Centene Healthcare Management Platform Project",
-  "Project Description: Developed and optimized web applications as part of the Centene healthcare management platform.",
-  "– Developed and optimized user-friendly web applications using React and Redux for Centene’s healthcare management platform.",
-  "– Led the migration of 3 systems and 6 applications from older frameworks to React, enhancing performance and maintainability.",
-  "– Designed and integrated RESTful APIs with the front end, improving data flow and reducing response time by 30%",
-  "– Implemented component-based architecture, ensuring reusability and consistency across applications.",
-  "– Configured and optimized CI/CD pipelines using Jenkins, automating front-end deployments.",
-  "– Provided technical support and resolved 10+ production bugs, improving user experience.",
+  "Frontend Developer (React, Redux)",
+  "Cognizant, Hyderabad | Nov 2021 – Present",
+  "●Developed and optimized web applications for Centene’s healthcare platform using React and Redux.",
+  "●Led migration of 3 systems & 6 applications to React, enhancing performance.",
+  "●Integrated RESTful APIs, improving data flow and reducing response time by 30%.",
+  "●Configured CI/CD pipelines (Jenkins) for automated deployments.",
+  "●Resolved 10+ production issues, improving user experience.",
 ];
 
 const textArray2 = [
