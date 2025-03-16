@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import projectImage from "../assets/img/projects.jpg";
-import projectImage1 from "../assets/img/project1.jpg";
+import projectImage4 from "../assets/img/projects.jpg";
+import projectImage1 from "../assets/img/Portfoliobg.jpeg";
+import projectImage2 from "../assets/img/imgcompressor.jpeg";
+import projectImage3 from "../assets/img/shoppingimg.jpeg";
 
 const ProjectItem = ({ title, description, image, link }) => {
   return (
@@ -39,22 +41,22 @@ const Projects = () => {
       title: "Image Compressor App",
       description:
         "An efficient image compression tool built with React, allowing users to reduce image size without significant quality loss.",
-      image: projectImage,
+      image: projectImage2,
       link: "https://skrn-compressor.web.app/",
-    },
-    {
-      title: "E-Commerce Website",
-      description:
-        "A fully responsive e-commerce website built with React and Redux, featuring product filtering, cart management, and payment integration.",
-      image: projectImage,
-      link: "#",
     },
     {
       title: "Weather App",
       description:
         "A weather application that fetches real-time weather data using an API and displays it in a user-friendly interface.",
-      image: projectImage,
+      image: projectImage4,
       link: "https://skrn-weather.web.app/",
+    },
+    {
+      title: "E-Commerce Website",
+      description:
+        "A fully responsive e-commerce website built with React and Redux, featuring product filtering, cart management, and payment integration.",
+      image: projectImage3,
+      link: "#",
     },
   ];
 
