@@ -142,40 +142,167 @@ img {
 }
 
 /*===== NAV =====*/
+
+/* Ensure nav items are aligned properly */
+/* Updated CSS for the navigation */
+
 .nav {
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: var(--font-semi);
+  padding: 0 var(--mb-2);
 }
 
-/* Ensure nav items are aligned properly */
-.nav {
+.nav-container-logo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
   position: relative;
-}
-
-.nav__menu {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.nav__list {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
 }
 
 /* Dark Mode Toggle - Always Visible */
 .darkmode-container {
   display: flex;
   align-items: center;
-  margin-right: 15px; /* Push it closer to Home */
+  margin-right: 15px;
+}
+
+.theme-toggle {
+  font-size: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--second-color);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+}
+
+.theme-toggle:hover {
+  color: var(--first-color);
+}
+
+/* Navigation menu */
+.nav__menu {
+  display: flex;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav__item {
+  margin: 0 var(--mb-2);
+}
+
+.nav__link {
+  color: var(--second-color);
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__link:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/* Menu Toggle Button (Burger Icon) */
+.nav__toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--second-color);
+  display: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  /* Show Menu Toggle on small screens */
+  .nav__toggle {
+    display: block;
+  }
+
+  /* Position the dark mode toggle for mobile */
+  .darkmode-container {
+    margin-right: 15px;
+  }
+
+  /* Hide normal nav menu and show mobile layout */
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: 0.5s;
+    flex-direction: column;
+  }
+
+  .nav__menu.show {
+    right: 0;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav__item {
+    margin: 0 0 var(--mb-4) 0;
+  }
+
+  .nav__link {
+    color: #fff;
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode .nav__logo,
+.dark-mode .nav__toggle {
+  color: #e0e0e0;
+}
+
+.dark-mode .theme-toggle {
+  color: #e0e0e0;
+}
+
+.dark-mode .theme-toggle:hover {
+  color: #8ab4f8;
+}
+
+.dark-mode .nav__menu {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .nav__link {
+  color: #e0e0e0;
+}
+
+.dark-mode .nav__link:hover {
+  color: #8ab4f8;
+}
+
+.dark-mode .nav__link:hover::after {
+  background-color: #8ab4f8;
 }
 
 /* Make sure the toggle sits properly */
@@ -184,56 +311,6 @@ img {
   background: none;
   border: none;
   cursor: pointer;
-}
-
-/* Menu Toggle Button (Burger Icon) */
-.nav__toggle {
-  font-size: 1.8rem;
-  cursor: pointer;
-  display: none; /* Hidden by default */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav {
-    position: relative;
-  }
-
-  /* Show Menu Toggle on small screens */
-  .nav__toggle {
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-  }
-
-  /* Hide normal nav menu and show mobile layout */
-  .nav__menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-  }
-
-  .nav__menu.show {
-    display: flex;
-  }
-
-  .nav__list {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  /* Move Dark Mode Toggle next to the menu button */
-  .darkmode-container {
-    position: absolute;
-    right: 50px;
-    top: 10px;
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -696,10 +773,6 @@ img {
 
 .projects__link:hover {
   color: #fff;
-}
-
-.icon_toggle {
-  padding-bottom: 20px;
 }
 
 .projects__link i {
