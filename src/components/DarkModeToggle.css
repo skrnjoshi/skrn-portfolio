@@ -1,0 +1,26 @@
+/* Dark Mode Toggle Styles */
+.theme-toggle {
+  font-size: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--second-color);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+}
+
+.theme-toggle:hover {
+  color: var(--first-color);
+}
+
+/* Dark mode styles */
+.dark-mode .theme-toggle {
+  color: #e0e0e0;
+}
+
+.dark-mode .theme-toggle:hover {
+  color: #8ab4f8;
+}

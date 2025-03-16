@@ -54,7 +54,7 @@ const Projects = () => {
       description:
         "A weather application that fetches real-time weather data using an API and displays it in a user-friendly interface.",
       image: projectImage,
-      link: "#",
+      link: "https://skrn-weather.web.app/",
     },
   ];
 
