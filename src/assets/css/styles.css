@@ -388,6 +388,7 @@ img {
   align-items: center;
   justify-content: space-around;
   text-align: left;
+  margin: 5rem;
 }
 
 .home__data {
@@ -518,8 +519,9 @@ img {
 /* Skills Section */
 /* Skills Section */
 .skills {
-  padding: 50px 0;
+  padding: 50px 0px;
   text-align: center;
+  margin-bottom: 5rem;
 }
 
 .skills__container {

@@ -31,7 +31,7 @@ const Footer = () => {
           <i className="bx bxl-twitter"></i>
         </a>
       </div>
-      <p className="footer__copy">&#169; Bedimcode. All rigths reserved</p>
+      <p className="footer__copy">&#169;All rigths reserved</p>
     </footer>
   );
 };
