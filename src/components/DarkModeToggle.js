@@ -11,7 +11,12 @@ export default function DarkModeToggle() {
   );
 
   useEffect(() => {
-    document.body.classList.toggle("dark-mode", theme === "dark");
+    console.log("Current Theme:", theme); // Debugging
+    if (theme === "dark") {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
     localStorage.setItem("theme", theme);
   }, [theme]);
 

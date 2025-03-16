@@ -59,8 +59,8 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="#work" className="nav__link" onClick={hideMenu}>
-                  Work
+                <Link to="#Experience" className="nav__link" onClick={hideMenu}>
+                  Experience
                 </Link>
               </li>
               <li className="nav__item">
