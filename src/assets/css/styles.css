@@ -671,10 +671,11 @@ img {
 }
 
 /*===== FORCE LINE BREAK FOR SMALLER SCREENS =====*/
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 950px) {
   .section-content {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   .section-content-item1 {
@@ -685,6 +686,9 @@ img {
   }
 
   .section-content-item2 {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
     order: 1;
   }
 

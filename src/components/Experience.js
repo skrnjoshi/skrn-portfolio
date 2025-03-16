@@ -5,7 +5,7 @@ import image from "../assets/img/cognizant_logo.png";
 import "../assets/css/styles.css"; // Importing external CSS
 
 const textArray1 = [
-  "Cognizant, Hyderabad (Mar 2021 – Present)",
+  "Cognizant, Hyderabad (Nov 2021 – Present)",
   "Frontend Developer (React, Redux) on Centene Healthcare Management Platform Project",
   "Project Description: Developed and optimized web applications as part of the Centene healthcare management platform.",
   "– Developed and optimized user-friendly web applications using React and Redux for Centene’s healthcare management platform.",
