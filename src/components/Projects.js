@@ -55,7 +55,7 @@ const Projects = () => {
     {
       title: "Calculator App",
       description:
-        "A fully responsive calculator app built with React, featuring basic arithmetic operations, a clean user interface, and real-time calculation display.",
+        "A responsive React Native calculator app with basic arithmetic operations, a clean UI, and real-time display. Built for iOS and Android.",
       image: projectImage3,
       link: "https://github.com/skrnjoshi/skrn-calculator.git",
     },
