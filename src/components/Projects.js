@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import projectImage4 from "../assets/img/projects.jpg";
 import projectImage1 from "../assets/img/Portfoliobg.jpeg";
 import projectImage2 from "../assets/img/imgcompressor.jpeg";
-import projectImage3 from "../assets/img/shoppingimg.jpeg";
+import projectImage5 from "../assets/img/shoppingimg.jpeg";
+import projectImage3 from "../assets/img/calculator2.jpg";
 
 const ProjectItem = ({ title, description, image, link }) => {
   return (
@@ -52,11 +53,11 @@ const Projects = () => {
       link: "https://skrn-weather.web.app/",
     },
     {
-      title: "E-Commerce Website",
+      title: "Calculator App",
       description:
-        "A fully responsive e-commerce website built with React and Redux, featuring product filtering, cart management, and payment integration.",
+        "A fully responsive calculator app built with React, featuring basic arithmetic operations, a clean user interface, and real-time calculation display.",
       image: projectImage3,
-      link: "#",
+      link: "https://github.com/skrnjoshi/skrn-calculator.git",
     },
   ];
 
