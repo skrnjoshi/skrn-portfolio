@@ -1291,3 +1291,58 @@ img {
   background: #3700b3;
   transform: scale(1.05);
 }
+
+/* Music toggle button styles */
+.music-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  position: relative;
+}
+
+.music-toggle .music-icon {
+  transition: transform 0.3s ease;
+}
+
+.music-toggle:hover .music-icon {
+  transform: scale(1.1);
+}
+
+.music-toggle.playing {
+  color: var(--first-color); /* Use your theme's accent color */
+}
+
+/* Optional: Add a pulsing animation when music is playing */
+.music-toggle.playing .music-icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .music-toggle {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+}

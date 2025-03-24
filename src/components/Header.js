@@ -1,21 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import logo from "../assets/img/skrnlogo.png";
 import DarkModeToggle from "./DarkModeToggle";
+import { FaMusic, FaPause } from "react-icons/fa";
+import musicFile from "../assets/music/saikiranmusic.mp3";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true); // Start with true for auto-play
+  const audioRef = useRef(null);
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  const hideMenu = () => {
-    setShowMenu(false);
+    audio.volume = 0.3; // Set volume to 30%
+
+    // Try to play automatically
+    const playAudio = async () => {
+      try {
+        await audio.play();
+        setIsPlaying(true);
+      } catch (err) {
+        console.log("Auto-play was prevented:", err);
+        setIsPlaying(false);
+      }
+    };
+
+    playAudio();
+
+    return () => {
+      audio.pause(); // Clean up on unmount
+    };
+  }, []);
+
+  const toggleMenu = () => setShowMenu(!showMenu);
+  const hideMenu = () => setShowMenu(false);
+
+  const toggleMusic = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => {
+          console.log("Playback failed:", err);
+          setIsPlaying(false);
+        });
+    }
   };
 
   return (
     <header className="l-header">
+      {/* Hidden audio element */}
+      <audio ref={audioRef} loop>
+        <source src={musicFile} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
       <nav className="nav bd-grid">
         <div className="nav-container-logo">
           <Link to="#" className="nav__logo">
@@ -29,7 +76,21 @@ const Header = () => {
         </div>
 
         <div className="header-right">
-          {/* Always visible dark mode toggle */}
+          {/* Music toggle button */}
+          <button
+            className="music-toggle"
+            onClick={toggleMusic}
+            aria-label={
+              isPlaying ? "Pause background music" : "Play background music"
+            }
+          >
+            {isPlaying ? <FaPause /> : <FaMusic />}
+          </button>
+
+          {/* Dark mode toggle */}
+          <div className="darkmode-container">
+            <DarkModeToggle />
+          </div>
 
           {/* Navigation menu */}
           <div className={`nav__menu ${showMenu ? "show" : ""}`} id="nav-menu">
@@ -69,9 +130,6 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
-          </div>
-          <div className="darkmode-container">
-            <DarkModeToggle />
           </div>
 
           {/* Mobile menu toggle button */}
