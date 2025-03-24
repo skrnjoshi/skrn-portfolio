@@ -7,16 +7,15 @@ import musicFile from "../assets/music/saikiranmusic.mp3";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(true); // Start with true for auto-play
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef(null);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    audio.volume = 0.3; // Set volume to 30%
+    audio.volume = 0.3;
 
-    // Try to play automatically
     const playAudio = async () => {
       try {
         await audio.play();
@@ -30,7 +29,7 @@ const Header = () => {
     playAudio();
 
     return () => {
-      audio.pause(); // Clean up on unmount
+      audio.pause();
     };
   }, []);
 
@@ -57,10 +56,8 @@ const Header = () => {
 
   return (
     <header className="l-header">
-      {/* Hidden audio element */}
       <audio ref={audioRef} loop>
         <source src={musicFile} type="audio/mpeg" />
-        Your browser does not support the audio element.
       </audio>
 
       <nav className="nav bd-grid">
@@ -76,15 +73,20 @@ const Header = () => {
         </div>
 
         <div className="header-right">
-          {/* Music toggle button */}
+          {/* Music Button */}
           <button
-            className="music-toggle"
+            className={`music-toggle ${isPlaying ? "playing" : ""}`}
             onClick={toggleMusic}
             aria-label={
               isPlaying ? "Pause background music" : "Play background music"
             }
           >
-            {isPlaying ? <FaPause /> : <FaMusic />}
+            <div className="music-icon-container">
+              {isPlaying ? <FaPause /> : <FaMusic />}
+            </div>
+            <span className="music-tooltip">
+              {isPlaying ? "Pause Music" : "Play Music"}
+            </span>
           </button>
 
           {/* Dark mode toggle */}
